@@ -174,10 +174,10 @@
             <fieldset>
                 <legend>Account Information:</legend>
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" ><span style="color : red;"><?php echo $userNameErr; ?></span>
+                <input type="text" id="username" name="username" ><span id="userNameErr" style="color : red;"><?php echo $userNameErr; ?></span>
                 <br><br>
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" pattern=".{4,}" ><span style="color : red;"><?php echo $passwordErr; ?></span>
+                <input type="password" id="password" name="password" pattern=".{4,}" ><span id="passwordErr" style="color : red;"><?php echo $passwordErr; ?></span>
                 <br><br>
                 <input type="submit" value="submit">
                 <br><br>
@@ -194,6 +194,7 @@
              function isvalid()
              {
                  var flag = true;
+
                  var fnameErr=document.getElementById("fnameErr");
                  var lnameErr=document.getElementById("lnameErr");
                  var genderErr=document.getElementById("genderErr");
@@ -204,6 +205,7 @@
                  var passwordErr=document.getElementById("passwordErr");
 
                  var fname=document.forms["registration"]["fname"].value;
+                 console.log(fname);
                  var lname=document.forms["registration"]["lname"].value;
                  var gender=document.forms["registration"]["gender"].value;
                  var dob=document.forms["registration"]["dob"].value;
@@ -226,45 +228,45 @@
                     fnameErr.innerHTML="* First name can not be empty.";
                     flag=false;
                 }
-                if(lname =="")
+                if(lname ==="")
                 {
                     lnameErr.innerHTML="* Last name can not be empty.";
                     flag=false;
                 }
-                if(gender =="")
+                if(gender ==="")
                 {
                     genderErr.innerHTML="* Gender can not be empty.";
                     flag=false;
                 }
-                if(dob =="")
+                if(dob ==="")
                 {
                     dobErr.innerHTML="* Date of birth can not be empty.";
                     flag=false;
                 }
-                if(religion =="")
+                if(religion ==="")
                 {
                     religionErr.innerHTML="* Religion can not be empty.";
                     flag=false;
                 }
-                if(email =="")
+                if(email ==="")
                 {
                     emailErr.innerHTML="* Email can not be empty.";
                     flag=false;
                 }
                 
 
-                if(username =="")
+                if(username ==="")
                 {
                     userNameErr.innerHTML="* User name can not be empty.";
                     flag=false;
                 }
 
-                if(password =="")
+                if(password ==="")
                 {
                     passwordErr.innerHTML="* Password can not be empty.";
                     flag=false;
                 }
-
+                
                 return flag;
 
              }
